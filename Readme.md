@@ -3,6 +3,10 @@ On CLI you can run the command as shown below substituting the user.pem for own 
 ```
 ansible-playbook  -u ec2-user  -i ec2.py  -T 60 -f 100 --private-key=~/user.pem playbook.yml -e "vpc_id=vpc-id zone=a ec2_Name=test ec2_role=test ec2_instance_type='t2.micro' ec2_keypair={{keypair}} ec2_image='{{ami id}}' storage_size=50"
 ```
+You can modify the number hosts and security group by changing the variables:
+- ec2_security_group
+- ec2_instance_count
+
 ## Tower Setup
 On Ansible Tower, you will need to let the scm sync and run the project on the UI
 P.S.
